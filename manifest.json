@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "NIKKE Manager",
+  "name": "Nikke Manager",
   "version": "1.0.0",
   "description": "Fetches equipment substat data for all your NIKKE characters.",
   "permissions": ["storage", "scripting", "tabs", "cookies"],
@@ -24,7 +24,7 @@
   },
   "action": {
     "default_popup": "popup.html",
-    "default_title": "NIKKE Manager",
+    "default_title": "Nikke Manager",
     "default_icon": {
       "16": "icons/icon_32.png",
       "32": "icons/icon_32.png",

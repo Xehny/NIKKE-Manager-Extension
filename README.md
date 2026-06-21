@@ -1,4 +1,4 @@
-# NIKKE Manager Extension
+# Nikke Manager Extension
 
 Fetches data for all your NIKKE characters directly from Chrome.
 No Node.js or command-line tools required.
@@ -8,7 +8,7 @@ No Node.js or command-line tools required.
 1. Open Chrome and go to `chrome://extensions`
 2. Enable **Developer mode** (toggle in the top-right corner)
 3. Click **Load unpacked** and select this `extension` folder
-4. The NIKKE Manager icon will appear in your toolbar
+4. The Nikke Manager icon will appear in your toolbar
 
 > Chrome may show a warning about developer mode extensions on startup -- this is normal
 > for extensions loaded this way. Click "Cancel" to dismiss it.
@@ -21,7 +21,7 @@ No Node.js or command-line tools required.
 ## Usage
 
 1. Log in to [blablalink.com](https://www.blablalink.com) in Chrome if you have not already
-2. Click the NIKKE Manager icon in your toolbar
+2. Click the Nikke Manager icon in your toolbar
 3. Click **Fetch Data** and wait around 10 seconds
 4. Click **Download JSON** to save `nikke-equips.json`
 

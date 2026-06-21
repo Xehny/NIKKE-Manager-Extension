@@ -126,6 +126,8 @@ async function scrapeInPage(apiBase) {
 
     // Retry GetUserCharacters - after cookie clearing, CheckLogin may still be in flight.
     // "Inner token is invalid[3]" means cookies aren't ready yet; wait and try again.
+    // "request too frequently" is a server-side rate limit hit when the first attempt lands
+    // while the page's own CheckLogin request is also in flight; retry clears it.
     let chars;
     for (let attempt = 0; attempt < 6; attempt++) {
         if (attempt > 0) await new Promise((r) => setTimeout(r, 2000));
@@ -133,7 +135,9 @@ async function scrapeInPage(apiBase) {
             intl_open_id: info.openid,
             nikke_area_id: nikkeAreaId,
         });
-        if (chars.code === 0 || !String(chars.msg ?? "").includes("Inner token")) break;
+        const msg = String(chars.msg ?? "").toLowerCase();
+        const isTransient = msg.includes("inner token") || msg.includes("too frequent");
+        if (chars.code === 0 || !isTransient) break;
     }
     if (chars.code !== 0) {
         const innerTokenFailed = String(chars.msg ?? "").includes("Inner token");
@@ -270,7 +274,7 @@ async function runFetch() {
         setStatus("fetching", "Sending to Gear Manager…");
         try {
             await sendToManager();
-            setStatus("done", `${count} nikkes - sent to Gear Manager`);
+            setStatus("done", `${count} nikkes sent to Nikke Manager`);
         } catch (_) {
             setStatus("done", `${count} nikkes loaded`);
         }
@@ -329,7 +333,7 @@ async function sendToManager() {
         if (tab.status !== "complete") await waitForTabComplete(tab.id);
     } else {
         const url = await resolveManagerUrl();
-        if (!url) throw new Error("NIKKE Manager app not found - is it running?");
+        if (!url) throw new Error("Nikke Manager app not found - is it running?");
         tab = await chrome.tabs.create({ url, active: true });
         await waitForTabComplete(tab.id);
     }

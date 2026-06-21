@@ -51,15 +51,20 @@
     .btn-login:hover { background: #e65100; }
     #loginBtn { display: none; }
     .meta { font-size: 11px; color: #999; margin-top: 4px; }
+    .gh-link { font-size: 11px; color: #999; text-decoration: none; }
+    .gh-link:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
-  <h1>NIKKE Manager</h1>
+  <h1>Nikke Manager</h1>
   <div id="status" class="status">Ready</div>
   <button id="fetchBtn"    class="btn btn-primary">Import Data</button>
   <button id="downloadBtn" class="btn btn-success" disabled>Download JSON</button>
 <button id="loginBtn"    class="btn btn-login">Log in to blablalink.com</button>
   <div id="meta" class="meta"></div>
+  <div style="margin-top: 6px;">
+    <a href="https://github.com/Xehny/Nikke-Manager-Extension" target="_blank" class="gh-link">GitHub</a>
+  </div>
   <script src="popup.js"></script>
 </body>
 </html>
