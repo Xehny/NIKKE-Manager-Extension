@@ -2,6 +2,7 @@
 
 A Chrome extension that fetches equipment and character data for all your NIKKE characters directly from [blablalink.com](https://www.blablalink.com) and imports it straight into the [Nikke Manager](https://github.com/PilgrimWorks/Nikke-Manager) app — no manual data entry needed.
 
+**Chrome Web Store:** [Nikke Manager Extension](https://chromewebstore.google.com/detail/nikke-manager/lkmibckbphaagkihbdmncaffedkkcmjp)  
 **Main app repo:** [github.com/PilgrimWorks/Nikke-Manager](https://github.com/PilgrimWorks/Nikke-Manager)  
 **Live app:** https://pilgrimworks.github.io/Nikke-Manager
 
@@ -14,13 +15,7 @@ A Chrome extension that fetches equipment and character data for all your NIKKE 
 
 ## Installation
 
-1. Download or clone this repository
-2. Open Chrome and go to `chrome://extensions`
-3. Enable **Developer mode** (toggle in the top-right corner)
-4. Click **Load unpacked** and select this folder
-5. The Nikke Manager icon will appear in your toolbar
-
-> Chrome may show a warning about developer mode extensions on startup — click **Cancel** to dismiss it. This is normal for extensions loaded this way.
+Install from the [Chrome Web Store](https://chromewebstore.google.com/detail/nikke-manager/lkmibckbphaagkihbdmncaffedkkcmjp). The Nikke Manager icon will appear in your toolbar.
 
 ## Usage
 
